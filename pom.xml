@@ -5,7 +5,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.testing.api</groupId>
-    <artifactId>restassured_api</artifactId>
+    <artifactId>restAssuredApiTesting</artifactId>
     <version>0.0.1-SNAPSHOT</version>
 
     <name>APITesting</name>

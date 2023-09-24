@@ -7,10 +7,13 @@ import io.restassured.response.Response;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
+import java.util.Map;
+
 public class BaseStepDefinition {
     protected static final Logger logger = LogManager.getLogger(Hooks.class);
     protected static ClientRequest clientRequest = new ClientRequest();
     protected static final ResourceRequest resourceRequest = new ResourceRequest();
     protected static Response response;
     protected Client client;
+    protected static Map<String, String> clientDataMap;
 }

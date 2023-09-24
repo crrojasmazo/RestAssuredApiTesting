@@ -27,6 +27,13 @@ public class JsonFileReader {
         return client;
     }
 
+    /**
+     * This method read a JSON file and deserialize the body into a Resource object
+     *
+     * @param jsonFileName json file location path
+     *
+     * @return Resource : resource
+     */
     public Resource getResourceByJson(String jsonFileName) {
         Resource resource = new Resource();
         try (Reader reader = new FileReader(jsonFileName)) {
