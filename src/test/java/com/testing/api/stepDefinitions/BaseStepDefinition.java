@@ -1,6 +1,8 @@
 package com.testing.api.stepDefinitions;
+import com.fasterxml.jackson.databind.ObjectMapper;
 
 import com.testing.api.models.Client;
+import com.testing.api.models.Resource;
 import com.testing.api.requests.ClientRequest;
 import com.testing.api.requests.ResourceRequest;
 import io.restassured.response.Response;
@@ -15,5 +17,11 @@ public class BaseStepDefinition {
     protected static final ResourceRequest resourceRequest = new ResourceRequest();
     protected static Response response;
     protected Client client;
+    protected Resource resource;
     protected static Map<String, String> clientDataMap;
+    protected static Map<String, String> resourceDataMap;
+
+    protected Resource lastResource;
+
+    ObjectMapper objectMapper = new ObjectMapper();
 }

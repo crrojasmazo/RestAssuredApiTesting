@@ -25,9 +25,9 @@ public class ResourceRequest extends BaseRequest {
         return requestGet(endpoint, createBaseHeaders());
     }
 
-    public Response updateResource(Client client, String resourceId) {
+    public Response updateResource(Resource resource, String resourceId) {
         endpoint = String.format(Constants.URL_WITH_PARAM, Constants.RESOURCE_PATH, resourceId);
-        return requestPut(endpoint, createBaseHeaders(), client);
+        return requestPut(endpoint, createBaseHeaders(), resource);
     }
 
     public Response deleteClient(String clientId) {
@@ -35,8 +35,8 @@ public class ResourceRequest extends BaseRequest {
         return requestDelete(endpoint, createBaseHeaders());
     }
 
-    public Client getClientEntity(@NotNull Response response) {
-        return response.as(Client.class);
+    public Resource getResourceEntity(@NotNull Response response) {
+        return response.as(Resource.class);
     }
 
     public List<Resource> getResourcesEntity(@NotNull Response response) {

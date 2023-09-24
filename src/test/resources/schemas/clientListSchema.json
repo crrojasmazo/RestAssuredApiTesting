@@ -29,7 +29,9 @@
       "lastName",
       "country",
       "city",
-      "email"
+      "email",
+      "phone",
+      "id"
     ]
   }
 }

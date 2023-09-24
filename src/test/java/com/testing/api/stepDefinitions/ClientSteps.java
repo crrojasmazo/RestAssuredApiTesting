@@ -68,7 +68,7 @@ public class ClientSteps extends BaseStepDefinition {
         // response to client
         Client responseClient = clientRequest.getClientEntity(response);
 
-        // Compare attributes between client response and sent client
+        // Compare attributes between client response and the client sent
         Assert.assertEquals(responseClient.getName(), client.getName());
         Assert.assertEquals(responseClient.getCity(), client.getCity());
         Assert.assertEquals(responseClient.getCountry(), client.getCountry());
