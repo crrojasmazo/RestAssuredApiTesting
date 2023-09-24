@@ -1,0 +1,9 @@
+{
+  "name": "Short jeans",
+  "trademark": "RedJeans",
+  "stock": 50001,
+  "price": 27001,
+  "description": "I like pants",
+  "tags": "status",
+  "is_active": true
+}
