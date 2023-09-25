@@ -1,5 +1,8 @@
 package com.testing.api.utils;
 
+/**
+ * Class to define the main constants in the test project
+ */
 public final class Constants {
     public static final  String VALUE_CONTENT_TYPE       = "application/json";
     public static final  String CONTENT_TYPE             = "Content-Type";

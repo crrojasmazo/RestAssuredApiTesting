@@ -4,6 +4,9 @@ import io.cucumber.junit.Cucumber;
 import io.cucumber.junit.CucumberOptions;
 import org.junit.runner.RunWith;
 
+/**
+ * Class to define the properties of the cucumber test runner
+ */
 @RunWith(Cucumber.class)
 @CucumberOptions(
         features = "src/test/resources/features",

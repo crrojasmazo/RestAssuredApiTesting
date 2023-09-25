@@ -1,10 +1,7 @@
 package com.testing.api.stepDefinitions;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
-import com.fasterxml.jackson.databind.ObjectMapper;
-import com.testing.api.models.Client;
 import com.testing.api.models.Resource;
-import com.testing.api.requests.ResourceRequest;
 import io.cucumber.datatable.DataTable;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
@@ -13,11 +10,14 @@ import org.junit.Assert;
 
 import java.util.List;
 
+/**
+ * Class to define the steps of the resource feature
+ */
 public class ResourceSteps extends BaseStepDefinition {
 
     @Given("there are registered resources in the system")
     public void thereAreRegisteredResourcesInTheSystem() {
-        response = resourceRequest.getRescources();
+        response = resourceRequest.getResources();
         logger.info(response.jsonPath().prettify());
         Assert.assertEquals(200, response.statusCode());
         List<Resource> resources = resourceRequest.getResourcesEntity(response);
@@ -30,7 +30,7 @@ public class ResourceSteps extends BaseStepDefinition {
 
     @When("I send a GET request to view all the resources")
     public void iSendAGETRequestToViewAllTheResources() {
-        response = resourceRequest.getRescources();
+        response = resourceRequest.getResources();
     }
 
     @And("validates the response with the resource list JSON schema")
@@ -46,22 +46,10 @@ public class ResourceSteps extends BaseStepDefinition {
     }
 
     @When("I send a PUT request to update the latest resource")
-    public void iSendAPUTRequestToUpdateTheLatestResource(String requestBody) throws JsonProcessingException {
+    public void iSendAPUTRequestToUpdateTheLatestResource(String requestBody) {
         logger.info(requestBody);
-
-        String jsonString = "{\n" +
-                "    \"name\": \"Thug Pants\",\n" +
-                "    \"trademark\": \"Colorado jeans\",\n" +
-                "    \"stock\": 1000,\n" +
-                "    \"price\": 99.99,\n" +
-                "    \"description\": \"Blue short jeans\",\n" +
-                "    \"tags\": \"thug\",\n" +
-                "    \"is_active\": true\n" +
-                "}";
-
-        Resource requestResourceJSONBody = objectMapper.readValue(jsonString, Resource.class);
-        response = resourceRequest.updateResource(requestResourceJSONBody,lastResource.getId());
-
+        response = resourceRequest.updateResource(resourceRequest.getResourceEntityString(requestBody),lastResource.getId());
+        logger.info(response);
     }
 
     @And("the response should have the following details:")

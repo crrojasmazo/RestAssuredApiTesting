@@ -8,8 +8,10 @@ import io.cucumber.java.en.When;
 import org.junit.Assert;
 
 import java.util.List;
-import java.util.Map;
 
+/**
+ * Class to define the main steps of the client feature
+ */
 public class ClientSteps extends BaseStepDefinition {
     @Given("there are registered clients in the system")
     public void thereAreRegisteredClientsInTheSystem() {
@@ -66,7 +68,7 @@ public class ClientSteps extends BaseStepDefinition {
     @And("the response should include the details of the created client")
     public void theResponseShouldIncludeTheDetailsOfTheCreatedClient() {
         // response to client
-        Client responseClient = clientRequest.getClientEntity(response);
+        responseClient = clientRequest.getClientEntity(response);
 
         // Compare attributes between client response and the client sent
         Assert.assertEquals(responseClient.getName(), client.getName());
@@ -74,6 +76,7 @@ public class ClientSteps extends BaseStepDefinition {
         Assert.assertEquals(responseClient.getCountry(), client.getCountry());
         Assert.assertEquals(responseClient.getEmail(), client.getEmail());
         Assert.assertEquals(responseClient.getPhone(), client.getPhone());
+        logger.info("The client sent and the client from the response are the same");
 
     }
 

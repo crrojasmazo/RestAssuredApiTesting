@@ -1,6 +1,4 @@
 package com.testing.api.stepDefinitions;
-import com.fasterxml.jackson.databind.ObjectMapper;
-
 import com.testing.api.models.Client;
 import com.testing.api.models.Resource;
 import com.testing.api.requests.ClientRequest;
@@ -11,6 +9,9 @@ import org.apache.logging.log4j.Logger;
 
 import java.util.Map;
 
+/**
+ * Class to define the shared variables among the steps and requests
+ */
 public class BaseStepDefinition {
     protected static final Logger logger = LogManager.getLogger(Hooks.class);
     protected static ClientRequest clientRequest = new ClientRequest();
@@ -20,8 +21,7 @@ public class BaseStepDefinition {
     protected Resource resource;
     protected static Map<String, String> clientDataMap;
     protected static Map<String, String> resourceDataMap;
-
     protected Resource lastResource;
+    protected  Client responseClient;
 
-    ObjectMapper objectMapper = new ObjectMapper();
 }

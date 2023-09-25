@@ -13,13 +13,13 @@ Feature: Resources testing CRUD
     When I send a PUT request to update the latest resource
     """
     {
-    “name”: "Thug Pants",
-    “trademark”: "Colorado jeans",
+    "name": "Thug Pants",
+    "trademark": "Colorado jeans",
     "stock": 1000,
     "price": 99.99,
-    "description" :  “Blue short jeans”,
-    “tags”: “thug”,
-    “is_active”: true
+    "description":"Blue short jeans",
+    "tags": "thug",
+    "is_active": true
     }
     """
     Then the response should have a status code of 200
