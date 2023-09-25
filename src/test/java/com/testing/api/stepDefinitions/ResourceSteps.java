@@ -1,6 +1,5 @@
 package com.testing.api.stepDefinitions;
 
-import com.fasterxml.jackson.core.JsonProcessingException;
 import com.testing.api.models.Resource;
 import io.cucumber.datatable.DataTable;
 import io.cucumber.java.en.And;
